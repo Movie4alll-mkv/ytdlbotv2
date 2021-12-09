@@ -125,8 +125,8 @@ def ytdl_download(url, tempdir, bm) -> dict:
         'quiet': True
     }
     formats = [
-        "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio",
-        "bestvideo[vcodec^=avc]+bestaudio[acodec^=mp4a]/best[vcodec^=avc]/best",
+        "bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]/bestvideo+bestaudio",
+        "bestvideo[vcodec^=avc][height<=?1080]+bestaudio[acodec^=mp4a]/best[vcodec^=avc]/best",
         ""
     ]
     adjust_formats(chat_id, url, formats)
